@@ -7,4 +7,5 @@ import lombok.Data;
 @Builder
 public class Greeting {
 	private String message;
+	private String host;
 }

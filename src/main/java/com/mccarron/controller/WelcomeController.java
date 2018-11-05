@@ -15,6 +15,6 @@ import com.mccarron.model.Greeting;
 public class WelcomeController {
 	@RequestMapping
 	public Greeting index(@RequestParam(required = false) String name, HttpServletRequest request) {
-		return Greeting.builder().message(String.format("Hello, %s", Optional.ofNullable(name).orElse(request.getRemoteHost()))).build();
+		return Greeting.builder().message(String.format("Hello, %s", Optional.ofNullable(name).orElse("Guest"))).host(request.getRemoteAddr()).build();
 	}
 }
